@@ -1,0 +1,67 @@
+/* Globals */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif; /* Tipografia moderna */
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box; /* Assegura que tot usa border-box */
+}
+
+/* Estils per al main */
+main {
+  background-color: #fef9ef; /* Beix clar pel contingut */
+  padding: 2rem 3rem; /* Padding: 2rem vertical, 3rem horitzontal */
+  color: #333; /* Text fosc per llegibilitat */
+  flex: 1;
+}
+
+/* Navbar */
+nav {
+  background-color: #b22234; /* Vermell tipus "berry sauce" */
+  color: white;
+  display: flex;
+  padding: 1rem 3rem; /* Padding uniforme */
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw; /* Amplada de la finestra visible */
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombra subtil */
+  overflow: hidden; /* Evita desbordaments visuals */
+}
+
+nav h1 {
+  margin: 0;
+  font-family: "Merriweather", serif; /* Tipografia elegant */
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700; /* Daurat quan passem el ratolí */
+}
+
+/* Footer */
+footer {
+  background-color: #d4a373; /* Color cookie */
+  color: white;
+  padding: 1.5rem 3rem; /* Padding uniforme */
+  text-align: center;
+  font-family: "Merriweather", serif;
+}

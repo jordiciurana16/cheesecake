@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="none">
+  <!-- Regalim superior amb gotes -->
+  <path d="
+    M0,0 
+    C200,150 400,-50 600,50 
+    C800,150 1000,-50 1200,50 
+    L1200,300 
+    L0,300 
+    Z"
+    fill="red"
+  />
+  <!-- Gotes separades -->
+  <path d="M150,50 C140,80 160,120 150,150 Q140,180 150,200 T150,250" fill="red" />
+  <path d="M500,50 C490,80 510,120 500,150 Q490,180 500,200 T500,250" fill="red" />
+  <path d="M800,50 C790,80 810,120 800,150 Q790,180 800,200 T800,250" fill="red" />
+</svg>
