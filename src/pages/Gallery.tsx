@@ -23,17 +23,13 @@ const Gallery: React.FC = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "2rem",
+          gridTemplateColumns: "repeat(4, 1fr)", // Fixem 4 columnes per fila
+          gap: "1.5rem", // Espai entre targetes
         }}
       >
-        {moviesData.map(
-          (
-            movie // Utilitzem les dades de moviesData
-          ) => (
-            <MovieCard key={movie.id} movie={movie} />
-          )
-        )}
+        {moviesData.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
       </div>
     </main>
   );

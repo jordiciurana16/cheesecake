@@ -30,6 +30,8 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
         flexDirection: "column",
         overflow: "hidden",
         transition: "transform 0.3s ease, box-shadow 0.3s ease",
+        maxWidth: "280px", // Límita la mida màxima de la targeta
+        margin: "0 auto", // Centra les targetes dins de cada columna
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "scale(1.05)";
@@ -84,8 +86,8 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
           alt={movie.title}
           style={{
             width: "100%",
-            height: "200px",
-            objectFit: "cover",
+            aspectRatio: "1 / 1", // Relació d'aspecte 1:1
+            objectFit: "cover", // Manté el contingut de la imatge ajustat
             borderRadius: "8px",
           }}
         />
