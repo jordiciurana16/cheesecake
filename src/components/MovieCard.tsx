@@ -6,32 +6,32 @@ interface MovieProps {
     title: string;
     description: string;
     releaseDate: string;
+    location: string;
     image: string;
     rating: number;
   };
 }
 
 const MovieCard: React.FC<MovieProps> = ({ movie }) => {
-  // Funció per obtenir el color segons la puntuació
   const getRatingColor = (rating: number): string => {
-    if (rating < 5) return "#ff6b6b"; // Vermell
-    if (rating <= 6) return "#ffa502"; // Taronja
-    if (rating <= 8.4) return "#badc58"; // Verd fluix
-    return "#6ab04c"; // Verd fort
+    if (rating < 5) return "#ff6b6b"; // Rojo
+    if (rating <= 6) return "#ffa502"; // Naranja
+    if (rating <= 8.4) return "#badc58"; // Verde claro
+    return "#6ab04c"; // Verde oscuro
   };
 
   return (
     <div
       style={{
-        backgroundColor: "#fff", // Fons blanc per a tota la card
+        backgroundColor: "#fff", // Fondo blanco para toda la tarjeta
         borderRadius: "10px",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         display: "flex",
         flexDirection: "column",
         overflow: "hidden",
         transition: "transform 0.3s ease, box-shadow 0.3s ease",
-        maxWidth: "280px", // Límita la mida màxima de la targeta
-        margin: "0 auto", // Centra les targetes dins de cada columna
+        maxWidth: "280px",
+        margin: "0 auto",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = "scale(1.05)";
@@ -42,14 +42,11 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
         e.currentTarget.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
       }}
     >
-      {/* Header de la card */}
+      {/* Encabezado: Título y Ubicación */}
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
           padding: "1rem",
-          backgroundColor: "#fff", // Fons blanc
+          backgroundColor: "#fff", // Fondo blanco como el resto de la tarjeta
           borderBottom: "1px solid #eee",
         }}
       >
@@ -59,64 +56,86 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
             fontSize: "1.2rem",
             fontWeight: "bold",
             color: "#333",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
         >
           {movie.title}
         </h3>
-        <span
+        <p
           style={{
+            margin: "0.3rem 0 0 0",
             fontSize: "0.9rem",
-            color: "#999",
-            fontWeight: "bold",
+            color: "#555",
+            fontStyle: "italic",
           }}
         >
-          {movie.releaseDate}
-        </span>
+          {movie.location}
+        </p>
       </div>
 
-      {/* Contenidor per a la imatge i el contingut */}
+      {/* Imagen con márgenes */}
       <div
         style={{
-          padding: "1rem", // Afegim padding consistent al voltant de la imatge i el contingut
+          padding: "1rem", // Espacios alrededor de la imagen
         }}
       >
-        {/* Imatge */}
         <img
           src={movie.image}
           alt={movie.title}
           style={{
             width: "100%",
-            aspectRatio: "1 / 1", // Relació d'aspecte 1:1
-            objectFit: "cover", // Manté el contingut de la imatge ajustat
+            aspectRatio: "1 / 1", // Relación de aspecto cuadrada
+            objectFit: "cover",
             borderRadius: "8px",
           }}
         />
+      </div>
 
-        {/* Cos de la card */}
+      {/* Cuerpo: Descripción, Fecha y Puntuación */}
+      <div
+        style={{
+          paddingBottom: "1rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.5rem",
+        }}
+      >
+        <p
+          style={{
+            margin: 0,
+            fontSize: "0.95rem",
+            color: "#555",
+            textAlign: "justify",
+            lineHeight: "1.4",
+          }}
+        >
+          {movie.description}
+        </p>
         <div
           style={{
-            marginTop: "1rem", // Espai entre la imatge i el contingut
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          <p
+          <span
             style={{
-              margin: 0,
               fontSize: "0.9rem",
-              color: "#555",
-              flex: 1,
+              color: "#999",
+              fontStyle: "italic",
             }}
           >
-            {movie.description}
-          </p>
+            {movie.releaseDate}
+          </span>
           <span
             style={{
               fontSize: "1.5rem",
               fontWeight: "bold",
-              color: getRatingColor(movie.rating), // Només la nota canvia de color
-              marginLeft: "1rem",
+              color: getRatingColor(movie.rating),
             }}
           >
             {movie.rating}

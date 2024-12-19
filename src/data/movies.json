@@ -4,39 +4,44 @@
     "title": "Corsi",
     "releaseDate": "17/11/2023",
     "rating": 9.3,
+    "location":"Firenze",
     "description": "Mucho pistacchio",
-    "image": "/public/corsi-1.jpg"
+    "image": "/corsi-1.jpg"
   },
   {
     "id": "2",
     "title": "Ostaria dei Centopoveri",
     "releaseDate": "24/01/2024",
     "rating": 8.2,
+    "location":"Firenze",
     "description": "Una tarta viendo al Barça perder",
-    "image": "/public/ostaria-centopoveri-1.jpg"
+    "image": "/ostaria-centopoveri-1.jpg"
   },
   {
     "id": "3",
     "title": "Trattoria Zà Zà",
     "releaseDate": "30/01/2024",
     "rating": 9,
+    "location":"Firenze",
     "description": "Una cena de despedida",
-    "image": "/public/trattoria-zaza-1.jpg"
+    "image": "/trattoria-zaza-1.jpg"
   },
   {
     "id": "4",
     "title": "Buca Niccolini",
     "releaseDate": "31/01/2024",
     "rating": 7.2,
+    "location":"Firenze",
     "description": "Una mochila olvidada y ...",
-    "image": "/public/buca-niccolini-4.jpg"
+    "image": "/buca-niccolini-4.jpg"
   },
   {
     "id": "5",
     "title": "Bella 'Mbriana",
     "releaseDate": "28/03/2024",
     "rating": 6.5,
+    "location":"Marbella",
     "description": "Reencuentro en Marbella",
-    "image": "/public/bella-mbriana-1.jpg"
+    "image": "/bella-mbriana-1.jpg"
   }
 ]
