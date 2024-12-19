@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface MovieProps {
   movie: {
@@ -13,6 +13,12 @@ interface MovieProps {
 }
 
 const MovieCard: React.FC<MovieProps> = ({ movie }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const toggleFlip = () => {
+    setIsFlipped((prev) => !prev);
+  };
+
   const getRatingColor = (rating: number): string => {
     if (rating < 5) return "#ff6b6b"; // Rojo
     if (rating <= 6) return "#ffa502"; // Naranja
@@ -23,123 +29,141 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
   return (
     <div
       style={{
-        backgroundColor: "#fff", // Fondo blanco para toda la tarjeta
-        borderRadius: "10px",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        display: "flex",
-        flexDirection: "column",
-        overflow: "hidden",
-        transition: "transform 0.3s ease, box-shadow 0.3s ease",
-        maxWidth: "280px",
-        margin: "0 auto",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "scale(1.05)";
-        e.currentTarget.style.boxShadow = "0 6px 12px rgba(0, 0, 0, 0.2)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "scale(1)";
-        e.currentTarget.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+        perspective: "1000px", // Per a l'efecte 3D
       }}
     >
-      {/* Encabezado: Título y Ubicación */}
       <div
+        onClick={toggleFlip}
         style={{
-          padding: "1rem",
-          backgroundColor: "#fff", // Fondo blanco como el resto de la tarjeta
-          borderBottom: "1px solid #eee",
+          width: "280px",
+          height: "405px",
+          position: "relative",
+          transformStyle: "preserve-3d",
+          transform: isFlipped ? "rotateY(180deg)" : "rotateY(0)",
+          transition: "transform 0.6s ease",
+          cursor: "pointer",
         }}
       >
-        <h3
-          style={{
-            margin: 0,
-            fontSize: "1.2rem",
-            fontWeight: "bold",
-            color: "#333",
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-        >
-          {movie.title}
-        </h3>
-        <p
-          style={{
-            margin: "0.3rem 0 0 0",
-            fontSize: "0.9rem",
-            color: "#555",
-            fontStyle: "italic",
-          }}
-        >
-          {movie.location}
-        </p>
-      </div>
-
-      {/* Imagen con márgenes */}
-      <div
-        style={{
-          padding: "1rem", // Espacios alrededor de la imagen
-        }}
-      >
-        <img
-          src={movie.image}
-          alt={movie.title}
-          style={{
-            width: "100%",
-            aspectRatio: "1 / 1", // Relación de aspecto cuadrada
-            objectFit: "cover",
-            borderRadius: "8px",
-          }}
-        />
-      </div>
-
-      {/* Cuerpo: Descripción, Fecha y Puntuación */}
-      <div
-        style={{
-          paddingBottom: "1rem",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.5rem",
-        }}
-      >
-        <p
-          style={{
-            margin: 0,
-            fontSize: "0.95rem",
-            color: "#555",
-            textAlign: "justify",
-            lineHeight: "1.4",
-          }}
-        >
-          {movie.description}
-        </p>
+        {/* Part Frontal */}
         <div
           style={{
+            backfaceVisibility: "hidden",
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "#fff",
+            borderRadius: "10px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            flexDirection: "column",
+            overflow: "hidden",
           }}
         >
-          <span
+          <div
             style={{
-              fontSize: "0.9rem",
-              color: "#999",
-              fontStyle: "italic",
+              padding: "1rem",
+              backgroundColor: "#fff",
+              borderBottom: "1px solid #eee",
             }}
           >
-            {movie.releaseDate}
-          </span>
-          <span
+            <h3
+              style={{
+                margin: 0,
+                fontSize: "1.2rem",
+                fontWeight: "bold",
+                color: "#333",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {movie.title}
+            </h3>
+            <p
+              style={{
+                margin: "0.3rem 0 0 0",
+                fontSize: "0.9rem",
+                color: "#555",
+                fontStyle: "italic",
+              }}
+            >
+              {movie.location}
+            </p>
+          </div>
+          <div
             style={{
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              color: getRatingColor(movie.rating),
+              padding: "1rem",
             }}
           >
-            {movie.rating}
-          </span>
+            <img
+              src={movie.image}
+              alt={movie.title}
+              style={{
+                width: "100%",
+                aspectRatio: "1 / 1",
+                objectFit: "cover",
+                borderRadius: "8px",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              paddingBottom: "0.5rem",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <span
+              style={{
+                fontSize: "0.9rem",
+                color: "#999",
+                fontStyle: "italic",
+              }}
+            >
+              {movie.releaseDate}
+            </span>
+            <span
+              style={{
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                color: getRatingColor(movie.rating),
+              }}
+            >
+              {movie.rating}
+            </span>
+          </div>
+        </div>
+
+        {/* Part Posterior */}
+        <div
+          style={{
+            backfaceVisibility: "hidden",
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            backgroundColor: "#f8f8f8",
+            borderRadius: "10px",
+            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            padding: "1rem",
+            transform: "rotateY(180deg)",
+          }}
+        >
+          <p
+            style={{
+              fontSize: "1rem",
+              color: "#333",
+              lineHeight: "1.5",
+            }}
+          >
+            {movie.description}
+          </p>
         </div>
       </div>
     </div>
