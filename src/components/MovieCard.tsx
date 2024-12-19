@@ -150,16 +150,17 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            textAlign: "center",
             padding: "1rem",
             transform: "rotateY(180deg)",
           }}
         >
           <p
             style={{
-              fontSize: "1rem",
+              fontSize: "0.9rem",
               color: "#333",
               lineHeight: "1.5",
+              whiteSpace: "pre-line", // Respecta els salts de línia
+              fontStyle: "italic",
             }}
           >
             {movie.description}

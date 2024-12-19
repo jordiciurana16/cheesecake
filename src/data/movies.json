@@ -4,8 +4,8 @@
     "title": "Corsi",
     "releaseDate": "17/11/2023",
     "rating": 9.3,
-    "location":"Firenze",
-    "description": "Mucho pistacchio",
+    "location": "Firenze",
+    "description": "En Corsi, l’aroma al pistacchio flotava,\nuna taula plena, la nit començava.\nLa dolçor d’una tarta, un record gravat,\nun tast perfecte, un món encantat.\n\nJorge, amfitrió de gran devoció,\nva fer del sopar una ocasió.\nAquella setmana, junts constantment,\nmoments com aquest són eternament.",
     "image": "/corsi-1.jpg"
   },
   {
@@ -13,8 +13,8 @@
     "title": "Ostaria dei Centopoveri",
     "releaseDate": "24/01/2024",
     "rating": 8.2,
-    "location":"Firenze",
-    "description": "Una tarta viendo al Barça perder",
+    "location": "Firenze",
+    "description": "Un sopar senzill, de tornada al camí,\nell venia de pintar, cansat però feliç.\nEl Barça al mòbil, la il·lusió al moment,\npocs minuts després, ja perdent.\n\nJo repassava l’examen, paraula a paraula,\nmentre tornàvem en bici sota una tarda clara.\nUn moment quotidià, ple de senzillesa,\nrecords que perduren amb tendresa.",
     "image": "/ostaria-centopoveri-1.jpg"
   },
   {
@@ -22,8 +22,8 @@
     "title": "Trattoria Zà Zà",
     "releaseDate": "30/01/2024",
     "rating": 9,
-    "location":"Firenze",
-    "description": "Una cena de despedida",
+    "location": "Firenze",
+    "description": "L'última nit, la llum s'apagava,\nFlorència ens mirava, la ciutat callava.\nUn sopar a Zà Zà, moments per recordar,\nla tarta tan bona que vam voler tornar.\n\nRecreant el dia perfecte, mà en mà,\ndespedint Corsi, el lloc on tot va començar.\nFlorència ens abraça en un últim sospir,\nun comiat dolç que ens farà somriure.",
     "image": "/trattoria-zaza-1.jpg"
   },
   {
@@ -31,8 +31,8 @@
     "title": "Buca Niccolini",
     "releaseDate": "31/01/2024",
     "rating": 7.2,
-    "location":"Firenze",
-    "description": "Una mochila olvidada y ...",
+    "location": "Firenze",
+    "description": "Florència ens veu, l'últim adéu,\nuna ciutat plena de tot el que és meu.\nA Buca Niccolini, moments de quietud,\nun comiat dolç, ple de gratitud.\n\nAquella vegada, la motxilla oblidada,\nsota la taula, una història inesperada.\nEns acomiadem, però no de debò,\nFlorència sempre viurà en el nostre cor.",
     "image": "/buca-niccolini-4.jpg"
   },
   {
@@ -40,8 +40,8 @@
     "title": "Bella 'Mbriana",
     "releaseDate": "28/03/2024",
     "rating": 6.5,
-    "location":"Marbella",
-    "description": "Reencuentro en Marbella",
+    "location": "Marbella",
+    "description": "Setmana Santa, el cel plorava,\ndos mesos lluny, el retrobament arribava.\nA Marbella, una processó esperada,\ncancel·lada pel temps, una nit inesperada.\n\nVam buscar refugi en un italià,\nsabors que ens porten a casa, de veritat.\nUn pot petit, dolçor i record,\nla nostàlgia ens uneix en aquest acord.",
     "image": "/bella-mbriana-1.jpg"
-  }
+  }  
 ]
