@@ -1,6 +1,6 @@
 import React from "react";
 import MovieCard from "../components/MovieCard";
-import moviesData from "../data/movies.json"; // Importem les dades del fitxer JSON
+import moviesData from "../data/movies.json";
 
 const Gallery: React.FC = () => {
   return (
@@ -23,8 +23,9 @@ const Gallery: React.FC = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)", // Fixem 4 columnes per fila
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", // Disseny responsiu
           gap: "1.5rem", // Espai entre targetes
+          gridAutoRows: "1fr", // Fixa una altura consistent per a totes les files
         }}
       >
         {moviesData.map((movie) => (

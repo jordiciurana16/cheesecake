@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
-import MovieDetail from "./pages/MovieDetail";
 import Compare from "./pages/Compare";
 
 const App: React.FC = () => {
@@ -18,7 +17,6 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/movie/:id" element={<MovieDetail />} />
             <Route path="/compare" element={<Compare />} />
           </Routes>
         </main>

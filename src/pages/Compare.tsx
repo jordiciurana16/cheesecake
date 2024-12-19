@@ -1,17 +1,21 @@
 import React, { useState } from "react";
-import moviesData from "../data/movies.json"; // Importem el fitxer JSON
+import moviesData from "../data/movies.json"; // Importamos el JSON
 
 const Compare: React.FC = () => {
-  const [sortBy, setSortBy] = useState<"rating" | "releaseDate">("rating");
+  const [sortBy, setSortBy] = useState<"rating" | "releaseDate" | "location">(
+    "rating"
+  );
 
-  // Ordena les pel·lícules segons el criteri seleccionat
+  // Ordenar las películas según el criterio seleccionado
   const sortedMovies = [...moviesData].sort((a, b) => {
     if (sortBy === "rating") {
-      return b.rating - a.rating; // Ordena per puntuació descendent
-    } else {
+      return b.rating - a.rating; // Ordenar por puntuación descendente
+    } else if (sortBy === "releaseDate") {
       return (
         new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime()
-      ); // Ordena per data ascendent
+      ); // Ordenar por fecha ascendente
+    } else {
+      return a.location.localeCompare(b.location); // Ordenar por ciudad alfabéticamente
     }
   });
 
@@ -49,7 +53,9 @@ const Compare: React.FC = () => {
         <select
           value={sortBy}
           onChange={(e) =>
-            setSortBy(e.target.value as "rating" | "releaseDate")
+            setSortBy(
+              e.target.value as "rating" | "releaseDate" | "location"
+            )
           }
           style={{
             padding: "0.5rem",
@@ -60,6 +66,7 @@ const Compare: React.FC = () => {
         >
           <option value="rating">Puntuació</option>
           <option value="releaseDate">Data de publicació</option>
+          <option value="location">Ciutat</option>
         </select>
       </div>
 
@@ -93,6 +100,17 @@ const Compare: React.FC = () => {
                 borderBottom: "2px solid #ddd",
               }}
             >
+              Ciutat
+            </th>
+            <th
+              style={{
+                padding: "1rem",
+                textAlign: "left",
+                fontWeight: "bold",
+                color: "#333",
+                borderBottom: "2px solid #ddd",
+              }}
+            >
               Puntuació
             </th>
             <th
@@ -113,7 +131,7 @@ const Compare: React.FC = () => {
             <tr
               key={movie.id}
               style={{
-                backgroundColor: index % 2 === 0 ? "#fefefe" : "#f9f9f9", // Colors alternats per files
+                backgroundColor: index % 2 === 0 ? "#fefefe" : "#f9f9f9", // Colores alternados para las filas
                 transition: "background-color 0.3s",
               }}
               onMouseEnter={(e) => {
@@ -132,6 +150,15 @@ const Compare: React.FC = () => {
                 }}
               >
                 {movie.title}
+              </td>
+              <td
+                style={{
+                  padding: "1rem",
+                  borderBottom: "1px solid #ddd",
+                  color: "#555",
+                }}
+              >
+                {movie.location}
               </td>
               <td
                 style={{
