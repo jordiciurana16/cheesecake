@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 
+interface Movie {
+  id: string;
+  title: string;
+  description: string;
+  releaseDate: string;
+  location: string;
+  image: string;
+  rating: number;
+  mapLink: string;
+}
+
 interface MovieProps {
-  movie: {
-    id: string;
-    title: string;
-    description: string;
-    releaseDate: string;
-    location: string;
-    image: string;
-    rating: number;
-  };
+  movie: Movie;
 }
 
 const MovieCard: React.FC<MovieProps> = ({ movie }) => {
@@ -27,11 +30,7 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
   };
 
   return (
-    <div
-      style={{
-        perspective: "1000px", // Per a l'efecte 3D
-      }}
-    >
+    <div style={{ perspective: "1000px" }}>
       <div
         onClick={toggleFlip}
         style={{
@@ -44,7 +43,7 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
           cursor: "pointer",
         }}
       >
-        {/* Part Frontal */}
+        {/* Parte Frontal */}
         <div
           style={{
             backfaceVisibility: "hidden",
@@ -79,22 +78,32 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
             >
               {movie.title}
             </h3>
-            <p
+            <a
+              href={movie.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 margin: "0.3rem 0 0 0",
                 fontSize: "0.9rem",
-                color: "#555",
+                color: "#808080", // Color gris por defecto
                 fontStyle: "italic",
+                textDecoration: "none", // Sin subrayado por defecto
+                transition: "color 0.2s ease, text-decoration 0.2s ease", // Transiciones suaves
+              }}
+              onClick={(e) => e.stopPropagation()} // Evita que el clic gire la tarjeta
+              onMouseEnter={(e) => {
+                e.currentTarget.style.textDecoration = "underline"; // Subrayar al hacer hover
+                e.currentTarget.style.color = "#666"; // Cambiar a un gris más oscuro
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.textDecoration = "none"; // Quitar el subrayado al salir del hover
+                e.currentTarget.style.color = "#808080"; // Volver al gris original
               }}
             >
               {movie.location}
-            </p>
+            </a>
           </div>
-          <div
-            style={{
-              padding: "1rem",
-            }}
-          >
+          <div style={{ padding: "1rem" }}>
             <img
               src={movie.image}
               alt={movie.title}
@@ -137,7 +146,7 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
           </div>
         </div>
 
-        {/* Part Posterior */}
+        {/* Parte Posterior */}
         <div
           style={{
             backfaceVisibility: "hidden",
@@ -159,7 +168,7 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
               fontSize: "0.9rem",
               color: "#333",
               lineHeight: "1.5",
-              whiteSpace: "pre-line", // Respecta els salts de línia
+              whiteSpace: "pre-line", // Respeta los saltos de línea
               fontStyle: "italic",
             }}
           >
