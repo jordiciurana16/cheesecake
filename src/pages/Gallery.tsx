@@ -1,14 +1,10 @@
 import React from "react";
 import MovieCard from "../components/MovieCard";
-import moviesData from "../data/movies.json";
+import cheesecakesData from "../data/cheesecakes.json";
 
 const Gallery: React.FC = () => {
   return (
-    <main
-      style={{
-        padding: "2rem", // Manté el padding per al contingut
-      }}
-    >
+    <div style={{ overflowX: "hidden", padding: "2rem" }}>
       <h1
         style={{
           fontSize: "2rem",
@@ -23,16 +19,15 @@ const Gallery: React.FC = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", // Disseny responsiu
-          gap: "1.5rem", // Espai entre targetes
-          gridAutoRows: "1fr", // Fixa una altura consistent per a totes les files
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "1.5rem",
         }}
       >
-        {moviesData.map((movie) => (
+        {cheesecakesData.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
-    </main>
+    </div>
   );
 };
 

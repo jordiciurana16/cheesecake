@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer>
+    <footer style={{ width: "100%" }}>
       <p>Alejandra e Jordi</p>
     </footer>
   );

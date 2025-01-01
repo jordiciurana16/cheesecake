@@ -3,6 +3,11 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif; /* Tipografia moderna */
   box-sizing: border-box;
+  overflow-x: hidden; /* Evita desbordament horitzontal */
+}
+
+html {
+  overflow-x: hidden; /* Evita desbordament horitzontal */
 }
 
 * {
@@ -12,7 +17,7 @@ body {
 /* Estils per al main */
 main {
   background-color: #fef9ef; /* Beix clar pel contingut */
-  padding: 2rem 3rem; /* Padding: 2rem vertical, 3rem horitzontal */
+  padding: 2rem; /* Padding uniforme */
   color: #333; /* Text fosc per llegibilitat */
   flex: 1;
 }

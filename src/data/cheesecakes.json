@@ -48,5 +48,15 @@
     "description": "Setmana Santa, el cel plorava,\ndos mesos lluny, el retrobament arribava.\nA Marbella, una processó esperada,\ncancel·lada pel temps, una nit inesperada.\n\nVam buscar refugi en un italià,\nsabors que ens porten a casa, de veritat.\nUn pot petit, dolçor i record,\nla nostàlgia ens uneix en aquest acord.",
     "image": "/bella-mbriana-1.jpg",
     "mapLink": "https://maps.app.goo.gl/ag2TncyVPuQ4w6wv8"
-  }  
+  },
+  {
+    "id": "6",
+    "title": "La Pizzeria Emma",
+    "releaseDate": "27/12/2024",
+    "rating": 4.9,
+    "location": "Puigcerdà",
+    "description": "Setmana Santa, el cel plorava,\ndos mesos lluny, el retrobament arribava.\nA Marbella, una processó esperada,\ncancel·lada pel temps, una nit inesperada.\n\nVam buscar refugi en un italià,\nsabors que ens porten a casa, de veritat.\nUn pot petit, dolçor i record,\nla nostàlgia ens uneix en aquest acord.",
+    "image": "/bella-mbriana-1.jpg",
+    "mapLink": "https://maps.app.goo.gl/KbthdgNDGGLraqnN6"
+  }
 ]
