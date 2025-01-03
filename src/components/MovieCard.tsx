@@ -34,8 +34,8 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
       <div
         onClick={toggleFlip}
         style={{
-          width: "280px",
-          height: "405px",
+          width: "100%",
+          aspectRatio: "2 / 3", // Aspect ratio 2:3
           position: "relative",
           transformStyle: "preserve-3d",
           transform: isFlipped ? "rotateY(180deg)" : "rotateY(0)",
@@ -103,7 +103,13 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
               {movie.location}
             </a>
           </div>
-          <div style={{ padding: "1rem" }}>
+          <div
+            style={{
+              paddingTop: "1rem",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
+            }}
+          >
             <img
               src={movie.image}
               alt={movie.title}
@@ -117,12 +123,12 @@ const MovieCard: React.FC<MovieProps> = ({ movie }) => {
           </div>
           <div
             style={{
-              paddingBottom: "0.5rem",
-              paddingLeft: "1rem",
-              paddingRight: "1rem",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
+              paddingTop: "1rem",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
             }}
           >
             <span
