@@ -63,9 +63,9 @@ const Compare: React.FC = () => {
               borderRadius: "5px",
             }}
           >
-            <option value="rating">Puntuació</option>
-            <option value="releaseDate">Data de publicació</option>
-            <option value="location">Ciutat</option>
+            <option value="rating">Punteggiatura</option>
+            <option value="releaseDate">Data della visita</option>
+            <option value="location">Città</option>
           </select>
         </div>
 
@@ -88,7 +88,7 @@ const Compare: React.FC = () => {
                   borderBottom: "2px solid #ddd",
                 }}
               >
-                Títol
+                Nome del ristorante
               </th>
               <th
                 style={{
@@ -99,7 +99,7 @@ const Compare: React.FC = () => {
                   borderBottom: "2px solid #ddd",
                 }}
               >
-                Ciutat
+                Città
               </th>
               <th
                 style={{
@@ -110,7 +110,7 @@ const Compare: React.FC = () => {
                   borderBottom: "2px solid #ddd",
                 }}
               >
-                Puntuació
+                Punteggiatura
               </th>
               <th
                 style={{
@@ -121,7 +121,7 @@ const Compare: React.FC = () => {
                   borderBottom: "2px solid #ddd",
                 }}
               >
-                Data de publicació
+                Data della visita
               </th>
             </tr>
           </thead>
